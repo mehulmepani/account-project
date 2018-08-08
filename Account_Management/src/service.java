@@ -1,30 +1,32 @@
 
 
-	import java.util.HashMap;
-	import java.util.Iterator;
-	import java.util.Map;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 	public class service {
 
 		public static void main(String args[]) {
-	        Map<Object, Integer> accounts = new HashMap<Object, Integer>();
+	        Map<Object, Integer> accounts = new HashMap<>();
 	        
-	        account first = new account("First", "second", 3468);
-	        account second = new account("third", "fourth", 235);
-	        accounts.put(first, 3);
-	        accounts.put(second, 4);
+	        account first = new account("dave", "smith", 1234);
+	        account second = new account("tom", "paul", 1235);
+	        accounts.put(first, first.getAccountNumber());
+	        accounts.put(second, second.getAccountNumber());
 	        
-	        System.out.println(accounts.size());
+	        Set set = accounts.entrySet();
 	        
-	        for(Object name: accounts.keySet()) {
-	            System.out.println(name +" "+accounts.get(name.toString()));
-
+	        Iterator i = set.iterator();
+	        
+	        while (i.hasNext()) {
+	        	Map.Entry MapEntry = (Map.Entry)i.next();
+	        	System.out.print("Account: " + MapEntry.getValue());
+	        	System.out.println(MapEntry.getKey());
+	        	
 	        }
 	        
-	     
-
 		}
-	
 	
 
 }
