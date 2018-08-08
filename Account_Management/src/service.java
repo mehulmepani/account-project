@@ -5,28 +5,30 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 	public class service {
 
-		public static void main(String args[]) {
-	        Map<Object, Integer> accounts = new HashMap<>();
-	        
-	        account first = new account("dave", "smith", 1234);
-	        account second = new account("tom", "paul", 1235);
-	        accounts.put(first, first.getAccountNumber());
-	        accounts.put(second, second.getAccountNumber());
-	        
-	        Set set = accounts.entrySet();
-	        
-	        Iterator i = set.iterator();
-	        
-	        while (i.hasNext()) {
-	        	Map.Entry MapEntry = (Map.Entry)i.next();
-	        	System.out.print("Account: " + MapEntry.getValue());
-	        	System.out.println(MapEntry.getKey());
-	        	
-	        }
-	        
-		}
-	
-
+        Map<Integer, account> accountsMap = new HashMap<Integer, account>();
+        
+        
+        // method to add an account
+        public void addAccount(account AccountNumber) {
+        	accountsMap.put(AccountNumber.getAccountNumber(), AccountNumber);
+        }
+        
+        // method to get an account
+        public account getAccount(int accountNumber) { 
+        	return this.accountsMap.get(accountNumber);
+        }
+        
+        public String getAccountToJSON(int accountNumber) {
+            GsonBuilder builder = new GsonBuilder();
+        	builder.setPrettyPrinting();
+        	Gson gson = builder.create(); 
+        	String jsonStr = gson.toJson(getAccount(accountNumber));
+        	    
+        	return jsonStr;
+        }
 }

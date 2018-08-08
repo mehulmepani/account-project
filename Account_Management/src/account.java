@@ -4,6 +4,10 @@ public class account {
 	private String firstName;
 	private String lastName;
 	private int accountNumber;
+	
+	public account() {
+		
+	}
 
 	public account (String firstName, String lastName, int accountNumber) {
 		this.firstName = firstName;
