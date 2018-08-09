@@ -2,16 +2,13 @@
 public class Runner {
 	public static void main(String args[]) {
         
-		// create accounts with account class
-        account first = new account("dave", "smith", 1234);
-        account second = new account("tom", "paul", 1235);
-        account third = new account("tom", "paul", 1235);
-        account fourth = new account("tom", "paul", 1235);
+        Account first = new Account("dave", "smith", 1234);
+        Account second = new Account("tom", "paul", 1235);
+        Account third = new Account("tom", "paul", 1235);
+        Account fourth = new Account("tom", "paul", 1235);
 
-        // setup service instance
-        service service = new service();
+        Service service = new Service();
         
-        // use the addAccount method (inside paramanter use account
         service.addAccount(first);
         service.addAccount(second);
         

@@ -1,15 +1,15 @@
 
-public class account {
+public class Account {
 	
 	private String firstName;
 	private String lastName;
 	private int accountNumber;
 	
-	public account() {
+	public Account() {
 		
 	}
 
-	public account (String firstName, String lastName, int accountNumber) {
+	public Account (String firstName, String lastName, int accountNumber) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.accountNumber = accountNumber;

@@ -1,5 +1,3 @@
-
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -8,18 +6,15 @@ import java.util.Set;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-	public class service {
+	public class Service {
 
-        Map<Integer, account> accountsMap = new HashMap<Integer, account>();
+        Map<Integer, Account> accountsMap = new HashMap<Integer, Account>();
         
-        
-        // method to add an account
-        public void addAccount(account AccountNumber) {
+        public void addAccount(Account AccountNumber) {
         	accountsMap.put(AccountNumber.getAccountNumber(), AccountNumber);
         }
-        
-        // method to get an account
-        public account getAccount(int accountNumber) { 
+
+        public Account getAccount(int accountNumber) { 
         	return this.accountsMap.get(accountNumber);
         }
         
@@ -36,7 +31,7 @@ import com.google.gson.GsonBuilder;
 			int counter = 0;
 			Iterator i = accountsMap.entrySet().iterator();
 		        
-		    for (account value: accountsMap.values()) {
+		    for (Account value: accountsMap.values()) {
 		    	if (value.getFirstName().equals(name)) {
 		    		counter++;
 		    	}  	 
