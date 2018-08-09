@@ -17,13 +17,16 @@ public class AccountManagementTest {
 		
 		// use while loop 
 		
-		assertEquals(2, service.cyclingThroughHash());
+		assertEquals(2, service.cyclingThroughHash("dave"));
 		//stuff
 		// create a method that will have a string parameter
 		
 		//while loop to loop through hash if it has anymore entry
+		
 		//for loop to loop through the hash checking the value
+		
 		//if statement to check the values passed on by the parameter exists
+		
 		//if it exist, add a counter to count them
 		
 		

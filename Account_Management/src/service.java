@@ -31,4 +31,16 @@ import com.google.gson.GsonBuilder;
         	    
         	return jsonStr;
         }
+
+		public int cyclingThroughHash(String name) {
+			int counter = 0;
+			Iterator i = accountsMap.entrySet().iterator();
+		        
+		    for (account value: accountsMap.values()) {
+		    	if (value.getFirstName().equals(name)) {
+		    		counter++;
+		    	}  	 
+			}
+			return counter;
+		}
 }
